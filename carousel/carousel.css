@@ -1,5 +1,6 @@
 .carousel {
   position: relative;
+  min-width: 100px;
   max-width: 500px;
   margin: 1em auto;
   border-radius: 12px;
@@ -13,20 +14,3 @@
 .carousel img.active {
   display: block;
 }
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: white;
-  font-size: 18px;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-.carousel button:hover {
-  background: rgba(0,0,0,0.7);
-}
-.carousel .prev { left: 10px; }
-.carousel .next { right: 10px; }
