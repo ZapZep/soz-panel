@@ -1,0 +1,25 @@
+.fs-toggle input {
+  display: none;
+}
+
+.fs-toggle img {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  z-index: 9998;
+}
+
+*:has(.fs-toggle) {
+  position: relative;
+}
+
+*:has(.fs-toggle input:checked) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
