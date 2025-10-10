@@ -16,13 +16,16 @@
   width: 20px;
   cursor: pointer;
   pointer-events: auto;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-*:has(>.fs-toggle) {
+*:has(> .fs-toggle) {
   display: grid;
 }
 
-*:has(>.fs-toggle input:checked) {
+*:has(> .fs-toggle input:checked) {
   position: fixed;
   overflow-y: auto;
   top: 0;
@@ -31,5 +34,5 @@
   height: 100vh;
   padding: 10px 15px 15px;
   z-index: 9999;
-  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), #191b28;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), #191b28;
 }
