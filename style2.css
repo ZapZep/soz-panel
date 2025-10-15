@@ -1,3 +1,8 @@
 @scope (section.sec-html > .section-container) {
 :scope {background: #3c3c3c;}
 }
+
+section.sec-html > .section-container > div > h2 > label {
+  display: flex;
+  background: rgb(255 255 255 / 0.2);
+}
