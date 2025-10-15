@@ -1,6 +1,6 @@
 section.sec-html > .section-container {
   background: linear-gradient(rgb(0 0 0 / 0.3)), #3c3c3c;
-  &:has(> .custom-html-style > p:first-child :checked) {
+  &:has(> .custom-html-style > p:first-of-type :checked) {
     position: fixed;
     z-index: 9999;
     top: 0;
