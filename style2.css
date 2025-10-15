@@ -1,8 +1,57 @@
-@scope (section.sec-html > .section-container) {
-:scope {background: #3c3c3c;}
+.drawer {
+  background: rgb(255 255 255 / 0.1);
+  border-radius: 4px;
+  & > h2:first-child {
+    & ~ * {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    &:has(input:not(:checked)) ~ *,
+    input {
+      display: none;
+    }
+    & :checked + label {
+      background: rgb(255 255 255 / 0.2);
+    }
+    & label {
+      display: flex;
+      cursor: pointer;
+      border-radius: 4px;
+      padding: 5px 15px;
+      &:hover {
+        background: rgb(255 255 255 / 0.3);
+      }
+    }
+  }
+  &:has(h2:first-child :checked) {
+    padding: 0 0 10px;
+  }
 }
 
-section.sec-html > .section-container > div > h2 > label {
-  display: flex;
-  background: rgb(255 255 255 / 0.2);
+section.sec-html > .section-container {
+  background: linear-gradient(rgb(0 0 0 / 0.3)), #3c3c3c;
+  &:has(> div > .fs:checked) {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
 }
+
+.fs {
+  position: sticky;
+  z-index: 9998;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  float: right;
+  appearance: none;
+  cursor: pointer;
+  background: url(https://zapzep.github.io/soz-panel/fs.png), rgb(0 0 0 / 0.7);
+  background-size: 100%;
+  box-shadow: 0 0 0 4px rgb(0 0 0 / 0.7);
+  border-radius: 4px;
+}
+
