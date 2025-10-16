@@ -50,6 +50,14 @@ section.sec-html > .section-container > .custom-html-style {
   }
 }
 
+
+section.sec-html > .section-container > .custom-html-style div:has(> h2:first-child > input[type="checkbox"]) {
+  padding: 0 10px;
+  & > h2:first-child {
+  margin: 24px -10px;
+  }
+}
+
 section.sec-html > .section-container > .custom-html-style div > h2:first-child {
   & > input[type="checkbox"] {
     display: none;
