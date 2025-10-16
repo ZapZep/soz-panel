@@ -1,0 +1,74 @@
+section.sec-html > .section-container {
+  background: linear-gradient(rgb(0 0 0 / 0.3)), #3c3c3c;
+  &:has(> .custom-html-style > p:first-of-type :checked) {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  & > .custom-html-style > p:first-of-type {
+    position: sticky;
+    z-index: 9998;
+    top: 10px;
+    & > label {
+      display: none;
+    }
+    & > input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+      float: right;
+      appearance: none;
+      cursor: pointer;
+      background: url(https://zapzep.github.io/soz-panel/fs.png),
+        rgb(0 0 0 / 0.7);
+      background-size: 100%;
+      box-shadow: 0 0 0 4px rgb(0 0 0 / 0.7);
+      border-radius: 4px;
+    }
+  }
+}
+
+section.sec-html > .section-container > .custom-html-style {
+  & > p:nth-of-type(2),
+  > p:last-of-type {
+    color: #ef4444;
+    border: 2px solid;
+    width: fit-content;
+    margin: auto;
+    padding: 4px;
+  }
+  & > p:nth-of-type(3) > img {
+    height: 200px;
+    margin: auto;
+  }
+  & > h1:first-of-type {
+    text-align: center;
+    color: #ffc777;
+    font-size: 3em;
+  }
+}
+
+section.sec-html > .section-container > .custom-html-style div > h2:first-child {
+  & > input[type="checkbox"] {
+    display: none;
+    & + label {
+      display: flex;
+      cursor: pointer;
+      color: #ffc777;
+      background: rgb(255 255 255 / 0.1);
+      border-radius: 4px;
+      padding: 0 10px;
+    }
+    &:checked + label {
+      background: rgb(255 255 255 / 0.2);
+    }
+    & + label:hover {
+      background: rgb(255 255 255 / 0.3);
+    }
+  }
+  &:has(> input:not(:checked)) ~ * {
+    display: none;
+  }
+}
