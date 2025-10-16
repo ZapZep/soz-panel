@@ -80,3 +80,34 @@ section.sec-html > .section-container > .custom-html-style div > h2:first-child 
     display: none;
   }
 }
+
+section.sec-html > .section-container > .custom-html-style div:has(> h4:first-child > input[type="checkbox"]) {
+  padding: 0 10px;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 0.1);
+  & > h4:first-child {
+  margin: 12px -10px;
+  }
+}
+
+section.sec-html > .section-container > .custom-html-style div > h4:first-child {
+  & > input[type="checkbox"] {
+    display: none;
+    & + label {
+      display: flex;
+      cursor: pointer;
+      background: rgb(255 255 255 / 0.1);
+      border-radius: 4px;
+      padding: 0 10px;
+    }
+    &:checked + label {
+      background: rgb(255 255 255 / 0.2);
+    }
+    & + label:hover {
+      background: rgb(255 255 255 / 0.3);
+    }
+  }
+  &:has(> input:not(:checked)) ~ * {
+    display: none;
+  }
+}
