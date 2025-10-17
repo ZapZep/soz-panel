@@ -1,6 +1,6 @@
 section.sec-html > .section-container {
   background: linear-gradient(rgb(0 0 0 / 0.3)), #3c3c3c;
-  &:has(> .custom-html-style > p:first-of-type :checked) {
+  &:has(> .custom-html-style > h4:first-child :checked) {
     position: fixed;
     z-index: 9999;
     top: 0;
@@ -8,57 +8,121 @@ section.sec-html > .section-container {
     width: 100vw;
     height: 100vh;
   }
-  & > .custom-html-style > p:first-of-type {
-    position: sticky;
-    z-index: 9998;
-    top: 10px;
-    & > label {
-      display: none;
+}
+
+section.sec-html > .section-container > .custom-html-style > h4:first-child {
+  position: sticky;
+  z-index: 9998;
+  top: 10px;
+  & > label {
+    display: none;
+  }
+  & > input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    margin: 0 !important;
+    float: right;
+    appearance: none;
+    cursor: pointer;
+    background: url(https://zapzep.github.io/soz-panel/fs.svg), rgb(0 0 0 / 0.5);
+    background-size: 100%;
+    border-radius: 4px;
+  }
+}
+
+section.sec-html
+  > .section-container
+  > .custom-html-style
+  > h4:first-child
+  + blockquote {
+  position: sticky;
+  z-index: 9998;
+  top: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  background: url(https://zapzep.github.io/soz-panel/sum.svg), rgb(0 0 0 / 0.5);
+  background-size: 100%;
+  border-radius: 4px;
+  &:not(:hover) > p {
+    display: none;
+  }
+  &:hover {
+    background: none;
+  }
+  & > p {
+    position: absolute;
+    left: 0;
+    width: max-content;
+    max-width: 15vw;
+    max-height: 40vh;
+    overflow: auto;
+    padding: 0 10px 10px;
+    margin: 0;
+    background: rgb(30 30 30 / 0.95);
+    border-radius: 4px;
+    & > strong {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: #ffc777;
+      font-size: 1.5em;
     }
-    & > input[type="checkbox"] {
-      width: 24px;
-      height: 24px;
-      float: right;
-      appearance: none;
-      cursor: pointer;
-      background: url(https://zapzep.github.io/soz-panel/fs.png),
-        rgb(0 0 0 / 0.7);
-      background-size: 100%;
-      box-shadow: 0 0 0 4px rgb(0 0 0 / 0.7);
+    & > a {
+      display: inline-block;
+      width: 100%;
+      color: inherit;
+      background: rgb(255 255 255 / 0.1);
       border-radius: 4px;
+      padding: 0 10px;
+      margin: 3px 0;
+      &:hover {
+        background: rgb(255 255 255 / 0.3);
+      }
     }
   }
 }
 
-section.sec-html > .section-container > .custom-html-style {
-  & > p:nth-of-type(2),
-  > p:last-of-type {
-    color: #ef4444;
-    border: 2px solid;
-    width: fit-content;
-    margin: auto;
-    padding: 4px;
-  }
-  & > p:nth-of-type(3) > img {
+section.sec-html > .section-container > .custom-html-style > hr:first-of-type {
+  & + p > img {
     height: 200px;
     margin: auto;
   }
-  & > h1:first-of-type {
+  & + p + h1 {
     text-align: center;
     color: #ffc777;
     font-size: 3em;
   }
 }
 
+section.sec-html
+  > .section-container
+  > .custom-html-style
+  > p:is(:first-of-type, :last-of-type) {
+  color: #ef4444;
+  border: 2px solid;
+  width: fit-content;
+  margin: auto;
+  padding: 4px;
+}
 
-section.sec-html > .section-container > .custom-html-style div:has(> h2:first-child > input[type="checkbox"]) {
+section.sec-html
+  > .section-container
+  > .custom-html-style
+  div:has(> h2:first-child > input[type="checkbox"]) {
   padding: 0 10px;
   & > h2:first-child {
-  margin: 24px -10px;
+    margin: 24px -10px;
   }
 }
 
-section.sec-html > .section-container > .custom-html-style div > h2:first-child {
+section.sec-html
+  > .section-container
+  > .custom-html-style
+  div
+  > h2:first-child {
   & > input[type="checkbox"] {
     display: none;
     & + label {
@@ -81,16 +145,23 @@ section.sec-html > .section-container > .custom-html-style div > h2:first-child 
   }
 }
 
-section.sec-html > .section-container > .custom-html-style div:has(> h4:first-child > input[type="checkbox"]) {
+section.sec-html
+  > .section-container
+  > .custom-html-style
+  div:has(> h4:first-child > input[type="checkbox"]) {
   padding: 0 10px;
   border-radius: 4px;
   background: rgb(255 255 255 / 0.1);
   & > h4:first-child {
-  margin: 12px -10px;
+    margin: 12px -10px;
   }
 }
 
-section.sec-html > .section-container > .custom-html-style div > h4:first-child {
+section.sec-html
+  > .section-container
+  > .custom-html-style
+  div
+  > h4:first-child {
   & > input[type="checkbox"] {
     display: none;
     & + label {
