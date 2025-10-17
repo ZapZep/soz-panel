@@ -155,6 +155,9 @@ section.sec-html
   & > h4:first-child {
     margin: 12px -10px;
   }
+  &:has(> h4:first-child > input:checked) {
+    padding-bottom: 5px;
+  }
 }
 
 section.sec-html
@@ -169,7 +172,7 @@ section.sec-html
       cursor: pointer;
       background: rgb(255 255 255 / 0.1);
       border-radius: 4px;
-      padding: 0 10px;
+      padding: 3px 10px;
     }
     &:checked + label {
       background: rgb(255 255 255 / 0.2);
