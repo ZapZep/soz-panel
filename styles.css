@@ -13,7 +13,7 @@ section.sec-html > .section-container {
 section.sec-html > .section-container > .custom-html-style > h4:first-child {
   position: sticky;
   z-index: 9998;
-  top: 10px;
+  top: 0;
   & > label {
     display: none;
   }
@@ -43,8 +43,8 @@ section.sec-html
   margin: 0;
   width: 32px;
   height: 32px;
-  background: url(https://zapzep.github.io/soz-panel/sum.svg), rgb(0 0 0 / 0.5);
-  background-size: 100%;
+  background: url(https://zapzep.github.io/soz-panel/sum.svg), rgb(0 0 0 / 0.5) !important;
+  background-size: 100% !important;
   border-radius: 4px;
   &:not(:hover) > p {
     display: none;
