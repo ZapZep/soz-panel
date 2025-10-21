@@ -1,0 +1,193 @@
+:has(> div > #transmi) {
+  background: #2a2a2a;
+}
+
+:has(> :has(> #transmi) > ul:first-of-type > :first-child :checked) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+:has(> #transmi) > ul:first-of-type {
+  position: sticky;
+  top: 0;
+  z-index: 9998;
+  margin: 0;
+  font-size: 101%;
+}
+
+:has(> #transmi) > ul:first-of-type * {
+  margin: 0;
+}
+
+:has(> #transmi) > ul:first-of-type > :first-child {
+  position: absolute;
+  right: 0;
+}
+
+:has(> #transmi) > ul:first-of-type > :first-child > p > label {
+  display: none;
+}
+
+:has(> #transmi) > ul:first-of-type > :first-child > p > input {
+  width: 32px;
+  height: 32px;
+  margin: 0 !important;
+  appearance: none;
+  cursor: pointer;
+  background: url(https://zapzep.github.io/soz-panel/fs.svg),
+    rgb(30 30 30 / 0.95);
+  background-size: 100%;
+  border-radius: 4px;
+}
+
+:has(> #transmi) > ul:first-of-type > :nth-child(2) {
+  position: absolute;
+  left: 0;
+}
+
+:has(> #transmi) > ul:first-of-type > :nth-child(2):not(:hover) {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: url(https://zapzep.github.io/soz-panel/sum.svg),
+    rgb(30 30 30 / 0.95);
+  background-size: 100%;
+  border-radius: 4px;
+}
+
+:has(> #transmi) > ul:first-of-type > :nth-child(2):not(:hover) > p {
+  display: none;
+}
+
+:has(> #transmi) > ul:first-of-type > :nth-child(2) > p {
+  display: flex;
+  flex-flow: column nowrap;
+  width: max-content;
+  max-width: 20vw;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 0 10px 10px;
+  background: rgb(30 30 30 / 0.95);
+  border-radius: 4px;
+}
+
+:has(> #transmi) > ul:first-of-type > :nth-child(2) > p > strong {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #ffc777;
+  font-size: 150%;
+}
+
+:has(> #transmi) > ul:first-of-type > :nth-child(2) > p > a {
+  display: inline-block;
+  width: 100%;
+  color: inherit;
+  background: rgb(255 255 255 / 0.1);
+  border-radius: 4px;
+  padding: 0 10px;
+  margin: 3px 0;
+  overflow-wrap: anywhere;
+}
+
+:has(> #transmi) > h6 > strong {
+  display: block;
+  width: fit-content;
+  color: #ef4444;
+  border: 2px solid;
+  padding: 10px 15px;
+  margin: auto;
+}
+
+:has(> #transmi) > hr:first-of-type + p {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+:has(> #transmi) > hr:first-of-type + p + h1 {
+  text-align: center;
+  color: #ffc777;
+  font-size: 3em;
+}
+
+:has(> #transmi) table {
+  margin: auto;
+}
+
+:has(> #transmi) :is(h1, h2) {
+  color: #ffc777;
+}
+
+:has(> #transmi) :is(h4, h5, h6) {
+  margin: 12px 0;
+}
+
+:has(> #transmi) :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"] {
+  display: none;
+}
+
+:has(> #transmi) :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"] + label {
+  display: block;
+  cursor: pointer;
+  background: #3c3c3c;
+  padding: 3px 12px 0;
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 300ms;
+}
+
+:has(> #transmi)
+  :is(h1, h2, h3, h4, h5, h6)
+  > input[type="checkbox"]
+  + label:hover {
+  border-bottom-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+
+:has(> #transmi)
+  :is(h1, h2, h3, h4, h5, h6)
+  > input[type="checkbox"]:checked
+  + label {
+  border-bottom-color: currentColor;
+}
+
+:has(> #transmi)
+  :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:not(:checked))
+  + blockquote {
+  display: none;
+}
+
+:has(> #transmi)
+  div
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
+    > input[type="checkbox"]:not(:checked)
+  )
+  ~ * {
+  display: none;
+}
+
+:has(> #transmi)
+  div:has(> :first-child:is(h4, h5, h6) > input[type="checkbox"]) {
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+:has(> #transmi)
+  div:has(
+    > :first-child:is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:checked
+  ) {
+  padding: 0 12px 1px;
+}
+
+:has(> #transmi)
+  div
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
+    > input[type="checkbox"]:checked
+  ) {
+  margin-left: -12px;
+  margin-right: -12px;
+}
