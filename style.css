@@ -2,7 +2,7 @@
   background: #2a2a2a;
 }
 
-:has(> :has(> #transmi) > ul:first-of-type > :first-child :checked) {
+:has(> div > #transmi ~ ul:first-of-type > :first-child :checked) {
   position: fixed;
   top: 0;
   left: 0;
