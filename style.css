@@ -177,14 +177,23 @@
 }
 
 :has(> #transmi)
-  div:has(> :first-child:is(h4, h5, h6) > input[type="checkbox"]) {
+  div:has(> :first-child > input[type="checkbox"]):has(
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ) {
   background: #3c3c3c;
   border-radius: 4px;
 }
 
 :has(> #transmi)
-  div:has(
-    > :first-child:is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:checked
+  div:has(> :first-child > input[type="checkbox"]:checked):has(
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
   ) {
   padding: 0 12px 1px;
 }
