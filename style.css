@@ -110,9 +110,14 @@
 }
 
 :has(> #transmi) > hr:first-of-type + p {
-  height: 200px;
   display: flex;
   justify-content: center;
+}
+
+:has(> #transmi) > hr:first-of-type + p > img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
 }
 
 :has(> #transmi) > hr:first-of-type + p + h1 {
