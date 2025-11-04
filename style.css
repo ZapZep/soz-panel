@@ -144,6 +144,7 @@
 
 :has(> #transmi) :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"] + label {
   display: block;
+  flex: 1;
   cursor: pointer;
   background: #3c3c3c;
   padding: 3px 12px 0;
@@ -210,4 +211,13 @@
   ) {
   margin-left: -12px;
   margin-right: -12px;
+}
+
+:has(> #transmi) :is(h1,h2,h3,h4,h5,h6):has(img) {
+  display: flex;
+  align-items: center;
+}
+
+:has(> #transmi) :is(h1,h2,h3,h4,h5,h6) img {
+  height: 80px;
 }
