@@ -1,5 +1,5 @@
 :has(> div > #transmi) {
-  background: #222736;
+  background: #11131c;
 }
 
 :has(> div > #transmi ~ ul:first-of-type > :first-child :checked) {
