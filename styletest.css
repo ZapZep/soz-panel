@@ -1,8 +1,26 @@
-:has(> div > #transmi) {
-  background: #2a2a2a;
+.sec-html:has(.sasp, .lspd, .bcso) {
+  --zz-bg-bk-30: rgb(0 0 0 / 0.3);
 }
 
-:has(> div > #transmi ~ ul:first-of-type > :first-child :checked) {
+.sec-html:has(.sasp) {
+  --zz-bg: #3c3c3c;
+  --zz-ov: rgb(54 54 54 / 95%);
+  --zz-fg: #ffc777;
+}
+
+.sec-html:has(.lspd) {
+  --zz-bg: #191b28;
+  --zz-ov: rgb(21 23 34 / 95%);
+  --zz-fg: #7981ac;
+}
+
+.sec-html:has(.bcso) {
+  --zz-bg: #203028;
+  --zz-ov: rgb(27 41 34 / 95%);
+  --zz-fg: #88af9a;
+}
+
+.sec-html:has(p :checked ~ a[href="@fs"]) {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,176 +29,188 @@
   z-index: 9999;
 }
 
-@scope (:has(> #transmi)) {
-  > ul:first-of-type {
-    position: sticky;
-    top: 0;
-    z-index: 9998;
-    margin: 0;
-    font-size: 101%;
-  }
-  > ul:first-of-type * {
-    margin: 0;
-  }
-  > ul:first-of-type > :first-child {
-    position: absolute;
-    right: 0;
-  }
-  > ul:first-of-type > :first-child > p > label {
-    display: none;
-  }
-  > ul:first-of-type > :first-child > p > input {
-    width: 32px;
-    height: 32px;
-    margin: 0 !important;
-    appearance: none;
-    cursor: pointer;
-    background: url(https://zapzep.github.io/soz-panel/fs.svg),
-      rgb(30 30 30 / 0.95);
-    background-size: 100%;
-    border-radius: 4px;
-  }
-  > ul:first-of-type > :nth-child(2) {
-    position: absolute;
-    left: 0;
-  }
-  > ul:first-of-type > :nth-child(2):not(:hover) {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    background: url(https://zapzep.github.io/soz-panel/sum.svg),
-      rgb(30 30 30 / 0.95);
-    background-size: 100%;
-    border-radius: 4px;
-  }
-  > ul:first-of-type > :nth-child(2):not(:hover) > p {
-    display: none;
-  }
-  > ul:first-of-type > :nth-child(2) > p {
-    display: flex;
-    flex-flow: column nowrap;
-    width: max-content;
-    max-width: 20vw;
-    max-height: 50vh;
-    overflow: auto;
-    padding: 0 10px 10px;
-    background: rgb(30 30 30 / 0.95);
-    border-radius: 4px;
-  }
-  > ul:first-of-type > :nth-child(2) > p > strong {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    color: #ffc777;
-    font-size: 150%;
-  }
-  > ul:first-of-type > :nth-child(2) > p > a {
-    display: inline-block;
-    width: 100%;
-    padding: 3px 10px 0;
-    margin: 3px 0;
-    color: inherit;
-    background: rgb(255 255 255 / 0.1);
-    border-radius: 4px;
-    border-bottom: 3px solid transparent;
-    overflow-wrap: anywhere;
-    transition: border-bottom 300ms;
-  }
-  > ul:first-of-type > :nth-child(2) > p > a:hover {
-    border-bottom-color: #ffc777;
-  }
-  > h6 > strong {
-    display: block;
-    width: fit-content;
-    color: #ef4444;
-    border: 2px solid;
-    padding: 10px 15px;
-    margin: auto;
-  }
-  > hr:first-of-type + p {
-    display: flex;
-    justify-content: center;
-  }
-  > hr:first-of-type + p > img {
-    height: 200px;
-    width: 200px;
-    object-fit: contain;
-  }
-  > hr:first-of-type + p + h1 {
-    text-align: center;
-    color: #ffc777;
-    font-size: 3em;
-  }
-  table,
-  img {
-    margin: auto;
-  }
-  :is(h1, h2) {
-    color: #ffc777;
-  }
-  :is(h4, h5, h6) {
-    margin: 12px 0;
-  }
-  :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"] {
-    display: none;
-  }
-  :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"] + label {
-    display: block;
-    flex: 1;
-    cursor: pointer;
-    background: #3c3c3c;
-    padding: 3px 12px 0;
-    border-radius: 4px;
-    border-bottom: 3px solid transparent;
-    transition: border-color 300ms;
-  }
-  :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"] + label:hover {
-    border-bottom-color: color-mix(in srgb, currentColor 50%, transparent);
-  }
-  :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:checked + label {
-    border-bottom-color: currentColor;
-  }
-  :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:not(:checked))
-    + blockquote {
-    display: none;
-  }
+.sec-html {
+  background: var(--zz-bg);
+}
+
+.html-wrap {
+  background: var(--zz-bg-bk-30);
+}
+
+blockquote:has(a[href="@fs"], a[href="@sum"]) {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  border: none;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+p:has(a[href="@fs"]) {
+  margin: 0;
+  height: 0;
+  display: flex;
+  justify-content: end;
+}
+
+p:has(a[href="@fs"]) input[type="checkbox"] {
+  width: 32px;
+  height: 32px;
+  margin-right: 0 !important;
+  appearance: none;
+  cursor: pointer;
+  background: url(https://zapzep.github.io/soz-panel/fs.svg), var(--zz-ov);
+  background-size: 100%;
+  border-radius: 4px;
+  position: relative;
+}
+
+p:has(a[href="@sum"]):not(:hover) {
+  visibility: hidden;
+}
+
+p:has(a[href="@sum"]):not(:hover)::before {
+  content: "";
+  visibility: visible;
+  width: 32px;
+  height: 32px;
+  margin-left: -10px;
+  background: url(https://zapzep.github.io/soz-panel/sum.svg), var(--zz-ov);
+  background-size: 100%;
+  border-radius: 4px;
+}
+
+p:has(a[href="@sum"]) {
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  width: max-content;
+  max-width: 20vw;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 0 10px 10px;
+  background: var(--zz-ov);
+  border-radius: 4px;
+}
+
+a[href="@sum"] ~ a {
+  display: inline-block;
+  width: 100%;
+  padding: 3px 10px 0;
+  margin: 3px 0;
+  color: inherit;
+  background: rgb(255 255 255 / 0.05);
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  overflow-wrap: anywhere;
+  transition: border-bottom 300ms;
+}
+
+a[href="@sum"] ~ a:hover {
+  border-bottom-color: var(--zz-fg);
+}
+
+a[href="@sum"] + strong {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: var(--zz-fg);
+  font-size: 150%;
+}
+
+p:has(a[href="@res"]) {
+  width: fit-content;
+  color: #ef4444;
+  border: 2px solid;
+  padding: 10px 15px;
+  margin: 10px auto;
+}
+
+.custom-html-style :is(h1, h2) {
+  color: var(--zz-fg);
+}
+
+.custom-html-style :is(h4, h5, h6) {
+  margin: 12px 0;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6):has(img) {
+  display: flex;
+  align-items: center;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) img {
+  max-height: 80px;
+}
+
+.custom-html-style :is(table, img) {
+  margin: auto;
+}
+
+.custom-html-style > h1:first-of-type {
+  font-size: 3em;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) input[type="checkbox"] {
+  display: none;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) input[type="checkbox"] + label {
+  display: block;
+  flex: 1;
+  cursor: pointer;
+  background: var(--zz-bg);
+  padding: 3px 12px 0;
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 300ms;
+}
+
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  input[type="checkbox"]
+  + label:hover,
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  input[type="checkbox"]:checked
+  + label {
+  border-bottom-color: inherit;
+}
+
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6):has(input[type="checkbox"]:not(:checked))
+  + :is(blockquote),
+.custom-html-style
   div
-    > :first-child:is(h1, h2, h3, h4, h5, h6):has(
-      > input[type="checkbox"]:not(:checked)
-    )
-    ~ * {
-    display: none;
-  }
-  div:has(> :first-child > input[type="checkbox"]):has(
-      > h4:first-child,
-      > h5:first-child,
-      > h6:first-child
-    ) {
-    background: #3c3c3c;
-    border-radius: 4px;
-  }
-  div:has(> :first-child > input[type="checkbox"]:checked):has(
-      > h1:first-child,
-      > h2:first-child,
-      > h3:first-child,
-      > h4:first-child,
-      > h5:first-child,
-      > h6:first-child
-    ) {
-    padding: 0 12px 1px;
-  }
-  div
-    > :first-child:is(h1, h2, h3, h4, h5, h6):has(
-      > input[type="checkbox"]:checked
-    ) {
-    margin-left: -12px;
-    margin-right: -12px;
-  }
-  :is(h1, h2, h3, h4, h5, h6):has(img) {
-    display: flex;
-    align-items: center;
-  }
-  :is(h1, h2, h3, h4, h5, h6) img {
-    height: 80px;
-  }
+  :is(h1, h2, h3, h4, h5, h6):has(input[type="checkbox"]:not(:checked))
+  ~ * {
+  display: none;
+}
+
+.custom-html-style
+  div:has(> :first-child :checked):has(
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ) {
+  padding: 0 12px 1px;
+}
+
+.custom-html-style
+  div:has(> :first-child input[type="checkbox"]):has(
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ) {
+  background: var(--zz-bg);
+  border-radius: 4px;
+}
+
+.custom-html-style div > :first-child:is(h1, h2, h3, h4, h5, h6):has(:checked) {
+  margin-left: -12px;
+  margin-right: -12px;
 }
