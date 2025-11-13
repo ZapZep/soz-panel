@@ -183,7 +183,9 @@ p:has(a[href="@res"]) {
   + :is(blockquote),
 .custom-html-style
   div
-  :is(h1, h2, h3, h4, h5, h6):has(input[type="checkbox"]:not(:checked))
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
+    input[type="checkbox"]:not(:checked)
+  )
   ~ * {
   display: none;
 }
