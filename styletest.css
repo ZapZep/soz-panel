@@ -1,22 +1,24 @@
-.sec-html:has(.sasp, .lspd, .bcso) {
-  --zz-bg-bk-30: rgb(0 0 0 / 0.3);
+.sec-html {
+  --zz-bg: #3c3c3c;
+  --zz-ov: #494949;
+  --zz-fg: #ffffff;
 }
 
-.sec-html:has(.sasp) {
+.bg-\[\#3c3c3c\], .sec-html:has(.sasp) {
   --zz-bg: #3c3c3c;
-  --zz-ov: rgb(54 54 54 / 95%);
+  --zz-ov: #494949;
   --zz-fg: #ffc777;
 }
 
-.sec-html:has(.lspd) {
+.bg-\[\#191b28\], .sec-html:has(.lspd) {
   --zz-bg: #191b28;
-  --zz-ov: rgb(21 23 34 / 95%);
+  --zz-ov: #232638;
   --zz-fg: #7981ac;
 }
 
-.sec-html:has(.bcso) {
+.bg-\[\#203028\], .sec-html:has(.bcso) {
   --zz-bg: #203028;
-  --zz-ov: rgb(27 41 34 / 95%);
+  --zz-ov: #2a3f35;
   --zz-fg: #88af9a;
 }
 
@@ -34,7 +36,7 @@
 }
 
 .html-wrap {
-  background: var(--zz-bg-bk-30);
+  backdrop-filter: brightness(70%);
 }
 
 blockquote:has(a[href="@fs"], a[href="@sum"]) {
@@ -100,7 +102,7 @@ a[href="@sum"] ~ a {
   padding: 3px 10px 0;
   margin: 3px 0;
   color: inherit;
-  background: rgb(255 255 255 / 0.05);
+  background: var(--zz-bg);
   border-radius: 4px;
   border-bottom: 3px solid transparent;
   overflow-wrap: anywhere;
