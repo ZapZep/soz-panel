@@ -39,7 +39,7 @@
   backdrop-filter: brightness(70%);
 }
 
-blockquote:has(a[href="@fs"], a[href="@sum"]) {
+.custom-html-style blockquote:has(a[href="@fs"], a[href="@sum"]) {
   margin: 0;
   padding: 0;
   height: 0;
@@ -49,14 +49,14 @@ blockquote:has(a[href="@fs"], a[href="@sum"]) {
   z-index: 9999;
 }
 
-p:has(a[href="@fs"]) {
+.custom-html-style p:has(a[href="@fs"]) {
   margin: 0;
   height: 0;
   display: flex;
   justify-content: end;
 }
 
-p:has(a[href="@fs"]) input[type="checkbox"] {
+.custom-html-style p:has(a[href="@fs"]) input[type="checkbox"] {
   width: 32px;
   height: 32px;
   margin-right: 0 !important;
@@ -68,11 +68,11 @@ p:has(a[href="@fs"]) input[type="checkbox"] {
   position: relative;
 }
 
-p:has(a[href="@sum"]):not(:hover) {
+.custom-html-style p:has(a[href="@sum"]):not(:hover) {
   visibility: hidden;
 }
 
-p:has(a[href="@sum"]):not(:hover)::before {
+.custom-html-style p:has(a[href="@sum"]):not(:hover)::before {
   content: "";
   visibility: visible;
   width: 32px;
@@ -83,7 +83,7 @@ p:has(a[href="@sum"]):not(:hover)::before {
   border-radius: 4px;
 }
 
-p:has(a[href="@sum"]) {
+.custom-html-style p:has(a[href="@sum"]) {
   margin: 0;
   display: flex;
   flex-flow: column nowrap;
@@ -96,7 +96,7 @@ p:has(a[href="@sum"]) {
   border-radius: 4px;
 }
 
-a[href="@sum"] ~ a {
+.custom-html-style a[href="@sum"] ~ a {
   display: inline-block;
   width: 100%;
   padding: 3px 10px 0;
@@ -109,11 +109,11 @@ a[href="@sum"] ~ a {
   transition: border-bottom 300ms;
 }
 
-a[href="@sum"] ~ a:hover {
+.custom-html-style a[href="@sum"] ~ a:hover {
   border-bottom-color: var(--zz-fg);
 }
 
-a[href="@sum"] + strong {
+.custom-html-style a[href="@sum"] + strong {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -121,12 +121,28 @@ a[href="@sum"] + strong {
   font-size: 150%;
 }
 
-p:has(a[href="@res"]) {
+.custom-html-style p:has(a[href="@res"]) {
   width: fit-content;
   color: #ef4444;
   border: 2px solid;
   padding: 10px 15px;
   margin: 10px auto;
+}
+
+.custom-html-style p:not(:has(> :not(img))):has(> img) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.custom-html-style img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.custom-html-style img[alt="@logo"] {
+  width: 200px;
+  height: 200px;
 }
 
 .custom-html-style :is(h1, h2) {
@@ -146,7 +162,7 @@ p:has(a[href="@res"]) {
   max-height: 80px;
 }
 
-.custom-html-style :is(table, img) {
+.custom-html-style :is(table) {
   margin: auto;
 }
 
