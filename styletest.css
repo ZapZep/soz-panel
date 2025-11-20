@@ -270,17 +270,15 @@
   user-select: none;
 }
 
-.custom-html-style
-  p
-  a[href="@carousel"]
-  ~ :not(
-    label:first-of-type,
-    :is(:checked + label + img, img:first-of-type, :checked + label):not(
-        :has(~ :checked)
-      ),
-    :is(:checked + label + img, img:first-of-type) + :not(:checked) + label
-  ) {
-  display: none;
+.custom-html-style p a[href="@carousel"] ~ :not(
+label:first-of-type,
+:checked + label:not(:has(~ :checked)),
+:checked + label + img:not(:has(~ :checked)),
+img:first-of-type:not(:has(~ :checked)),
+:checked + label + img + :not(:checked) + label,
+img:first-of-type + :not(:checked) + label,
+) {
+display: none;
 }
 
 .custom-html-style p a[href="@carousel"] ~ img {
