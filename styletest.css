@@ -276,7 +276,7 @@ label:first-of-type,
 :checked + label + img:not(:has(~ :checked)),
 img:first-of-type:not(:has(~ :checked)),
 :checked + label + img + :not(:checked) + label,
-img:first-of-type + :not(:checked) + label,
+img:first-of-type + :not(:checked) + label
 ) {
 display: none;
 }
