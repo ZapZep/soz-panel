@@ -15,6 +15,7 @@
 
 .custom-html-style p:has(a[href="@sum"]):not(:hover)::before {
   visibility: visible;
+  display: block;
   width: 32px;
   height: 32px;
   content: "";
