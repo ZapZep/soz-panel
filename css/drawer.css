@@ -26,7 +26,7 @@
 
 .custom-html-style
   :is(h1, h2, h3, h4, h5, h6):has(input[type="checkbox"]:not(:checked))
-  + :is(blockquote),
+  + :is(blockquote, table),
 .custom-html-style
   div
   > :first-child:is(h1, h2, h3, h4, h5, h6):has(
