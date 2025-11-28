@@ -47,6 +47,7 @@
 
 .custom-html-style :is(h1, h2, h3, h4, h5, h6) img {
   max-height: 80px;
+  width: auto;
 }
 
 .custom-html-style p:not(:has(> :not(img))):has(> img) {
