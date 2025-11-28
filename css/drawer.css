@@ -1,8 +1,11 @@
-.custom-html-style :is(h1, h2, h3, h4, h5, h6) input[type="checkbox"] {
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:first-child {
   display: none;
 }
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6) input[type="checkbox"] + label {
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  > input[type="checkbox"]:first-child
+  + label {
   display: block;
   flex: 1;
   padding: 3px 12px 0;
@@ -15,29 +18,29 @@
 
 .custom-html-style
   :is(h1, h2, h3, h4, h5, h6)
-  input[type="checkbox"]
+  > input[type="checkbox"]:first-child
   + label:hover,
 .custom-html-style
   :is(h1, h2, h3, h4, h5, h6)
-  input[type="checkbox"]:checked
+  > input[type="checkbox"]:first-child:checked
   + label {
   border-bottom-color: inherit;
 }
 
 .custom-html-style
-  :is(h1, h2, h3, h4, h5, h6):has(input[type="checkbox"]:not(:checked))
+  :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:first-child:not(:checked))
   + :is(blockquote, table),
 .custom-html-style
   div
   > :first-child:is(h1, h2, h3, h4, h5, h6):has(
-    input[type="checkbox"]:not(:checked)
+    > input[type="checkbox"]:first-child:not(:checked)
   )
   ~ * {
   display: none;
 }
 
 .custom-html-style
-  div:has(> :first-child :checked):has(
+  div:has(> :first-child > :first-child:checked):has(
     > h1:first-child,
     > h2:first-child,
     > h3:first-child,
@@ -49,7 +52,7 @@
 }
 
 .custom-html-style
-  div:has(> :first-child input[type="checkbox"]):has(
+  div:has(> :first-child > input[type="checkbox"]:first-child):has(
     > h4:first-child,
     > h5:first-child,
     > h6:first-child
@@ -58,7 +61,9 @@
   border-radius: 4px;
 }
 
-.custom-html-style div > :first-child:is(h1, h2, h3, h4, h5, h6):has(:checked) {
+.custom-html-style
+  div
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(> :first-child:checked) {
   margin-left: -12px;
   margin-right: -12px;
 }
