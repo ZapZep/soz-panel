@@ -1,0 +1,27 @@
+#app {
+  --zz-bg: #3c3c3c;
+  --zz-ov: #494949;
+  --zz-fg: #ffffff;
+  --zz-res: #ef4444;
+}
+
+.bg-\[\#3c3c3c\],
+.sec-html:has(.sasp) {
+  --zz-bg: #3c3c3c;
+  --zz-ov: #494949;
+  --zz-fg: #ffc777;
+}
+
+.bg-\[\#191b28\],
+.sec-html:has(.lspd) {
+  --zz-bg: #191b28;
+  --zz-ov: #232638;
+  --zz-fg: #7981ac;
+}
+
+.bg-\[\#203028\],
+.sec-html:has(.bcso) {
+  --zz-bg: #203028;
+  --zz-ov: #2a3f35;
+  --zz-fg: #88af9a;
+}

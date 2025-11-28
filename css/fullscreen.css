@@ -1,0 +1,34 @@
+.sec-html:has(p :checked ~ a[href="@fs"]) {
+  position: fixed;
+  inset: 0;
+}
+
+.custom-html-style blockquote:has(a[href="@fs"]) {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.custom-html-style p:has(a[href="@fs"]) {
+  display: flex;
+  justify-content: end;
+  height: 0;
+  margin: 0;
+}
+
+.custom-html-style p:has(a[href="@fs"]) input[type="checkbox"] {
+    display: none;
+}
+
+.custom-html-style p:has(a[href="@fs"]) label {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background: url(../svg/fullscreen.svg), var(--zz-ov);
+  background-size: 100%;
+  border-radius: 4px;
+}

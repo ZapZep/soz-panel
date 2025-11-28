@@ -1,0 +1,73 @@
+@import "theme.css";
+@import "fullscreen.css";
+@import "summary.css";
+@import "drawer.css";
+@import "carousel.css";
+
+.sec-html {
+  position: relative;
+  z-index: 9999;
+  background: var(--zz-bg);
+}
+
+.sec-html::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: rgb(0 0 0 / 30%);
+}
+
+
+.custom-html-style p:has(a[href="@res"]) {
+  width: fit-content;
+  margin: 10px auto;
+  padding: 10px 15px;
+  color: var(--zz-res);
+  border: 2px solid;
+}
+
+.custom-html-style :is(h1, h2) {
+  color: var(--zz-fg);
+}
+
+.custom-html-style :is(h4, h5, h6) {
+  margin: 12px 0;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6):has(img) {
+  display: flex;
+  align-items: center;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) img {
+  max-height: 80px;
+}
+
+.custom-html-style p:not(:has(> :not(img))):has(> img) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.custom-html-style img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.custom-html-style img[alt="@logo"] {
+  width: 200px;
+  height: 200px;
+}
+
+.custom-html-style table {
+  margin: auto;
+}
+
+.custom-html-style tr:has(a[href="@blank"]) {
+  background-color: #434343;
+}
+
+.custom-html-style > h1:first-of-type {
+  font-size: 3em;
+}

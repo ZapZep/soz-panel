@@ -1,0 +1,64 @@
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) input[type="checkbox"] {
+  display: none;
+}
+
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) input[type="checkbox"] + label {
+  display: block;
+  flex: 1;
+  padding: 3px 12px 0;
+  cursor: pointer;
+  background: var(--zz-bg);
+  border-radius: 4px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 300ms;
+}
+
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  input[type="checkbox"]
+  + label:hover,
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  input[type="checkbox"]:checked
+  + label {
+  border-bottom-color: inherit;
+}
+
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6):has(input[type="checkbox"]:not(:checked))
+  + :is(blockquote),
+.custom-html-style
+  div
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
+    input[type="checkbox"]:not(:checked)
+  )
+  ~ * {
+  display: none;
+}
+
+.custom-html-style
+  div:has(> :first-child :checked):has(
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ) {
+  padding: 0 12px 1px;
+}
+
+.custom-html-style
+  div:has(> :first-child input[type="checkbox"]):has(
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ) {
+  background: var(--zz-bg);
+  border-radius: 4px;
+}
+
+.custom-html-style div > :first-child:is(h1, h2, h3, h4, h5, h6):has(:checked) {
+  margin-left: -12px;
+  margin-right: -12px;
+}
