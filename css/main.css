@@ -27,6 +27,11 @@
   border: 2px solid;
 }
 
+.custom-html-style > h1:first-of-type {
+  font-size: 3em;
+  text-align: center;
+}
+
 .custom-html-style :is(h1, h2) {
   color: var(--zz-fg);
 }
@@ -66,8 +71,4 @@
 
 .custom-html-style tr:has(a[href="@blank"]) {
   background-color: #434343;
-}
-
-.custom-html-style > h1:first-of-type {
-  font-size: 3em;
 }
