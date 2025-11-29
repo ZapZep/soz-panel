@@ -1,92 +1,90 @@
 .custom-html-style blockquote:has(a[href="@carousel"]) {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  display: flex;
+  justify-content: center;
   height: auto;
   width: 100%;
   aspect-ratio: 2 / 1;
-  background-color: transparent !important;
-  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent !important;
 }
 
 .custom-html-style p:has(a[href="@carousel"]) {
-  margin: auto;
-  padding: 8px;
+  display: flex;
   height: 90%;
   width: 90%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background: #333;
+  margin: 0;
+  padding: 8px;
+  background: #333e;
   border-radius: 8px;
   user-select: none;
 }
 
-.custom-html-style p a[href="@carousel"] ~ :not(
-label:first-of-type,
-:checked + label:not(:has(~ :checked)),
-:checked + label + img:not(:has(~ :checked)),
-img:first-of-type:not(:has(~ :checked)),
-:checked + label + img + :not(:checked) + label,
-img:first-of-type + :not(:checked) + label
-) {
+.custom-html-style p:has(a[href="@carousel"] + :checked) {
+  position: fixed;
+  inset: 5%;
+  z-index: 99999;
+}
+
+
+.custom-html-style p a[href="@carousel"] ~ label {
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 0;
+}
+
+.custom-html-style p a[href="@carousel"] + input + label {
+  justify-content: start;
+  order: 1;
+}
+
+.custom-html-style p a[href="@carousel"] + input ~ :checked + label {
+  align-items: start;
+}
+
+.custom-html-style p a[href="@carousel"] ~ label::after {
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+width: 40px;
+height: 40px;
+z-index: 1;
+content: "›";
+font-size: 2em;
+background: #0005;
+border-radius: 8px;
+}
+
+.custom-html-style p a[href="@carousel"] + input ~ :checked + label::after {
+content: "‹";
+}
+
+.custom-html-style p a[href="@carousel"] + input + label::after {
+content : "⛶";
+}
+
+.custom-html-style p a[href="@carousel"] ~ label::after {
+filter: opacity(0);
+}
+
+.custom-html-style p:hover a[href="@carousel"] ~ label::after {
+filter: opacity(0.3);
+}
+
+.custom-html-style p a[href="@carousel"] ~ label:hover::after {
+filter: opacity(1);
+}
+
+.custom-html-style p a[href="@carousel"] ~ * {
 display: none;
 }
 
-.custom-html-style p a[href="@carousel"] ~ img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-}
-
-.custom-html-style p a[href="@carousel"] + input + label ~ label {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  background: #0005;
-  border-radius: 8px;
-  filter: opacity(0);
-}
-
-.custom-html-style p a[href="@carousel"] + input + label ~ :checked + label {
-  left: 0;
-}
-
-.custom-html-style p a[href="@carousel"] + input + label ~ label::after {
-  content: "❯";
-}
-
-.custom-html-style p a[href="@carousel"] + input + label ~ :checked + label::after {
-  content: "❮";
-}
-
-.custom-html-style p:hover a[href="@carousel"] + input + label ~ label {
-  filter: opacity(0.3);
-}
-
-.custom-html-style p a[href="@carousel"] + input + label ~ label:hover {
-  filter: opacity(1);
-}
-
-a[href="@carousel"] + input + label {
-  position: absolute;
-  top: 0;
-  width: calc(100% - 96px);
-  height: 100%;
-}
-
-.custom-html-style p:has(a[href="@carousel"] + :checked) {
-  position: fixed;
-  top: 5vh;
-  left: 5vw;
-  height: 90vh;
-  width: 90vw;
-  z-index: 99999;
-  background: #333e;
+.custom-html-style p a[href="@carousel"] ~ :is(:checked, input:first-of-type):not(:has(+ label + img + :checked)) + label + img,
+.custom-html-style p a[href="@carousel"] ~ :checked:not(:has(+ label + img + :checked)) + label,
+.custom-html-style p a[href="@carousel"] ~ :is(:checked, input:first-of-type) + label + img + :not(:checked) + label,
+.custom-html-style p a[href="@carousel"] + input + label {
+display: flex;
 }
