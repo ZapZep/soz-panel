@@ -216,9 +216,10 @@
 .custom-html-style
   :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:first-child) {
   position: relative;
-  background: var(--zz-bg);
   padding: 3px 12px;
   border-radius: 4px;
+  background: var(--zz-bg);
+  cursor: pointer;
 }
 
 .custom-html-style
