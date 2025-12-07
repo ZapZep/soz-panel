@@ -213,36 +213,51 @@
 
 /*  Drawer  */
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:first-child) {
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:first-child) {
   position: relative;
   background: var(--zz-bg);
   padding: 3px 12px;
   border-radius: 4px;
 }
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:first-child {
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  > input[type="checkbox"]:first-child {
   display: none;
 }
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:first-child + label::before {
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  > input[type="checkbox"]:first-child
+  + label::before {
   position: absolute;
   inset: 0;
   content: "";
   border-bottom: 3px solid;
+  border-radius: 4px;
   opacity: 0;
   transition: opacity 300ms;
 }
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6):hover > input[type="checkbox"]:first-child + label::before {
-  opacity: .5;
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6):hover
+  > input[type="checkbox"]:first-child
+  + label::before {
+  opacity: 0.5;
 }
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6) > input[type="checkbox"]:first-child:checked + label::before {
+.custom-html-style
+  :is(h1, h2, h3, h4, h5, h6)
+  > input[type="checkbox"]:first-child:checked
+  + label::before {
   opacity: 1;
 }
 
 .custom-html-style
-  :is(h1, h2, h3, h4, h5, h6):has(> input[type="checkbox"]:first-child:not(:checked))
+  :is(h1, h2, h3, h4, h5, h6):has(
+    > input[type="checkbox"]:first-child:not(:checked)
+  )
   + :is(blockquote, table),
 .custom-html-style
   div
@@ -253,7 +268,12 @@
   display: none;
 }
 
-.custom-html-style div > :first-child:is(h1,h2,h3,h4,h5,h6):has(> input[type="checkbox"]:first-child) ~ :last-child {
+.custom-html-style
+  div
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
+    > input[type="checkbox"]:first-child
+  )
+  ~ :last-child {
   margin-bottom: 1px;
 }
 
@@ -268,8 +288,22 @@
 }
 
 .custom-html-style
+  div:has(> :first-child > input[type="checkbox"]:first-child):has(
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ) {
+  margin: 0 12px;
+}
+
+.custom-html-style
   div
-  > :first-child:is(h1, h2, h3, h4, h5, h6):has(> :first-child:checked) {
+  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
+    > input[type="checkbox"]:first-child
+  ) {
   margin-left: -12px;
   margin-right: -12px;
 }
@@ -305,7 +339,6 @@
   z-index: 99999;
 }
 
-
 .custom-html-style p a[href="@carousel"] ~ label {
   flex-direction: column;
   justify-content: center;
@@ -323,46 +356,62 @@
 }
 
 .custom-html-style p a[href="@carousel"] ~ label::after {
-display: flex;
-justify-content: center;
-align-items: center;
-overflow: hidden;
-width: 40px;
-height: 40px;
-z-index: 1;
-content: "›";
-font-size: 2em;
-background: #0005;
-border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  content: "›";
+  font-size: 2em;
+  background: #0005;
+  border-radius: 8px;
 }
 
 .custom-html-style p a[href="@carousel"] + input ~ :checked + label::after {
-content: "‹";
+  content: "‹";
 }
 
 .custom-html-style p a[href="@carousel"] + input + label::after {
-content : "⛶";
+  content: "⛶";
 }
 
 .custom-html-style p a[href="@carousel"] ~ label::after {
-filter: opacity(0);
+  filter: opacity(0);
 }
 
 .custom-html-style p:hover a[href="@carousel"] ~ label::after {
-filter: opacity(0.3);
+  filter: opacity(0.3);
 }
 
 .custom-html-style p a[href="@carousel"] ~ label:hover::after {
-filter: opacity(1);
+  filter: opacity(1);
 }
 
 .custom-html-style p a[href="@carousel"] ~ * {
-display: none;
+  display: none;
 }
 
-.custom-html-style p a[href="@carousel"] ~ :is(:checked, input:first-of-type):not(:has(+ label + img + :checked)) + label + img,
-.custom-html-style p a[href="@carousel"] ~ :checked:not(:has(+ label + img + :checked)) + label,
-.custom-html-style p a[href="@carousel"] ~ :is(:checked, input:first-of-type) + label + img + :not(:checked) + label,
+.custom-html-style
+  p
+  a[href="@carousel"]
+  ~ :is(:checked, input:first-of-type):not(:has(+ label + img + :checked))
+  + label
+  + img,
+.custom-html-style
+  p
+  a[href="@carousel"]
+  ~ :checked:not(:has(+ label + img + :checked))
+  + label,
+.custom-html-style
+  p
+  a[href="@carousel"]
+  ~ :is(:checked, input:first-of-type)
+  + label
+  + img
+  + :not(:checked)
+  + label,
 .custom-html-style p a[href="@carousel"] + input + label {
-display: flex;
+  display: flex;
 }
