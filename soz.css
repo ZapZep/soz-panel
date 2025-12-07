@@ -270,15 +270,6 @@
 }
 
 .custom-html-style
-  div
-  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
-    > input[type="checkbox"]:first-child
-  )
-  ~ :last-child {
-  margin-bottom: 1px;
-}
-
-.custom-html-style
   div:has(> :first-child > input[type="checkbox"]:first-child):has(
     > h4:first-child,
     > h5:first-child,
