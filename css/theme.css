@@ -25,3 +25,10 @@
   --zz-ov: #2a3f35;
   --zz-fg: #88af9a;
 }
+
+.bg-\[\#432222\],
+.sec-html:has(.mdr) {
+  --zz-bg: #432222;
+  --zz-ov: #552e36;
+  --zz-fg: #aa5c6c;
+}
