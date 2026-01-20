@@ -106,7 +106,6 @@
 
 .custom-html-style p:has(a[href="@fs"]) {
   margin: 0;
-  order: 1;
 }
 
 .custom-html-style p:has(a[href="@fs"]) input[type="checkbox"] {
