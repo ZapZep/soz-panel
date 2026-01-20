@@ -28,6 +28,13 @@
   --zz-fg: #88af9a;
 }
 
+.bg-\[\#432222\],
+.sec-html:has(.mdr) {
+  --zz-bg: #432222;
+  --zz-ov: #552e36;
+  --zz-fg: #aa5c6c;
+}
+
 /*  General styling  */
 
 .sec-html {
@@ -65,28 +72,6 @@
   margin: 12px 0;
 }
 
-.custom-html-style :is(h1, h2, h3, h4, h5, h6):has(img) {
-  display: flex;
-  align-items: center;
-}
-
-.custom-html-style :is(h1, h2, h3, h4, h5, h6) img {
-  max-height: 80px;
-  width: auto;
-  order: -1;
-}
-
-.custom-html-style p:not(:has(> :not(img))):has(> img) {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-
-.custom-html-style img {
-  width: 100%;
-  object-fit: contain;
-}
-
 .custom-html-style img[alt="@logo"] {
   width: 200px;
   height: 200px;
@@ -102,7 +87,7 @@
 
 /*  Fullscreen  */
 
-.sec-html:has(p :checked ~ a[href="@fs"]) {
+.sec-html:has(p > :checked ~ a[href="@fs"]) {
   position: fixed;
   inset: 0;
 }
@@ -121,7 +106,7 @@
 
 .custom-html-style p:has(a[href="@fs"]) {
   margin: 0;
-  width: fit-content;
+  order: 1;
 }
 
 .custom-html-style p:has(a[href="@fs"]) input[type="checkbox"] {
@@ -144,23 +129,14 @@
 
 /*  Summary  */
 
-.custom-html-style blockquote:has(a[href="@sum"]) {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  height: 0;
-  margin: 0;
+.custom-html-style blockquote:has(> p a[href="@sum"]) {
+  margin: 0 3px;
   padding: 0;
   border: 0;
+  order: -1;
 }
 
-.custom-html-style p:has(a[href="@sum"]) {
-  visibility: hidden;
-  margin: 0;
-}
-
-.custom-html-style p:has(a[href="@sum"]):not(:hover)::before {
-  visibility: visible;
+.custom-html-style blockquote:has(> p > a[href="@sum"]):not(:hover)::before {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,8 +149,11 @@
   overflow: hidden;
 }
 
-.custom-html-style p:has(a[href="@sum"]):hover {
-  visibility: visible;
+.custom-html-style blockquote:not(:hover) > p:has(a[href="@sum"]) {
+  display: none;
+}
+
+.custom-html-style p:has(a[href="@sum"]) {
   display: flex;
   flex-flow: column nowrap;
   overflow: auto;
@@ -182,6 +161,7 @@
   max-width: 20vw;
   max-height: 50vh;
   padding: 0 10px 10px;
+  margin: 0;
   background: var(--zz-ov);
   border-radius: 4px;
 }
@@ -196,7 +176,7 @@
   background: var(--zz-bg);
   border-radius: 4px;
   border-bottom: 3px solid transparent;
-  transition: border-bottom 300ms;
+  transition: border 300ms;
 }
 
 .custom-html-style a[href="@sum"] ~ a:hover {
@@ -259,43 +239,17 @@
   :is(h1, h2, h3, h4, h5, h6):has(
     > input[type="checkbox"]:first-child:not(:checked)
   )
-  + :is(blockquote, table),
-.custom-html-style
-  div
-  > :first-child:is(h1, h2, h3, h4, h5, h6):has(
-    > input[type="checkbox"]:first-child:not(:checked)
-  )
-  ~ * {
+  + :is(div, blockquote, table, img) {
   display: none;
 }
 
-.custom-html-style
-  div:has(> :first-child > input[type="checkbox"]:first-child):has(
-    > h4:first-child,
-    > h5:first-child,
-    > h6:first-child
-  ) {
+.custom-html-style :is(h1, h2, h3, h4, h5, h6) + div {
+  padding: 1px 12px;
+}
+
+.custom-html-style :is(h4, h5, h6) + div {
   background: var(--zz-bg);
   border-radius: 4px;
-}
-
-.custom-html-style
-  div:has(> :first-child > :checked:first-child):has(
-    > h1:first-child,
-    > h2:first-child,
-    > h3:first-child,
-    > h4:first-child,
-    > h5:first-child,
-    > h6:first-child
-  ) {
-  padding: 0 12px 1px;
-}
-
-.custom-html-style
-  div
-  > :first-child:is(h1, h2, h3, h4, h5, h6):has(> :checked:first-child) {
-  margin-left: -12px;
-  margin-right: -12px;
 }
 
 /*  Carousel  */
