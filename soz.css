@@ -77,6 +77,12 @@
   height: 200px;
 }
 
+.custom-html-style p:not(:has(:not(img))):has(img) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
 .custom-html-style table {
   margin: auto;
 }
@@ -251,6 +257,41 @@
   border-radius: 4px;
 }
 
+.custom-html-style
+  div:has(
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ):has(:first-child > input[type="checkbox"]:first-child) {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1px 12px;
+}
+
+.custom-html-style
+  div:has(
+    > h1:first-child,
+    > h2:first-child,
+    > h3:first-child,
+    > h4:first-child,
+    > h5:first-child,
+    > h6:first-child
+  ):has(:first-child > input[type="checkbox"]:first-child:not(:checked)) {
+  visibility: collapse;
+}
+
+.custom-html-style
+  div
+  > :is(h1, h2, h3, h4, h5, h6):first-child:has(
+    > input[type="checkbox"]:first-child
+  ) {
+  visibility: visible;
+  margin: 12px -12px;
+}
+
 /*  Carousel  */
 
 .custom-html-style blockquote:has(a[href="@carousel"]) {
@@ -334,6 +375,11 @@
 
 .custom-html-style p a[href="@carousel"] ~ * {
   display: none;
+}
+
+.custom-html-style p a[href="@carousel"] ~ img {
+  width: 100%;
+  object-fit: contain;
 }
 
 .custom-html-style
