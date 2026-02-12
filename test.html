@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Date</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: transparent;
+        color: #fff;
+        font-family:
+          system-ui,
+          -apple-system,
+          Arial,
+          sans-serif;
+      }
+      .wrap {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #date {
+        font-weight: 700;
+        font-size: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" id="root">
+      <div id="date"></div>
+    </div>
+    <script>
+      const date = document.getElementById("date");
+      const tick = () => {
+        const now = new Date();
+        date.textContent = now.toLocaleString("fr", {
+          dateStyle: "short",
+          timeStyle: "medium",
+        });
+      };
+      setInterval(tick, 100);
+    </script>
+  </body>
+</html>
