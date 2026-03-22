@@ -77,6 +77,10 @@
   height: 200px;
 }
 
+.custom-html-style img[alt="@small"] {
+  width: 50%;
+}
+
 .custom-html-style p:not(:has(:not(img))):has(img) {
   display: flex;
   flex-flow: row wrap;

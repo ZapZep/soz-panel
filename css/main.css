@@ -67,6 +67,10 @@
   height: 200px;
 }
 
+.custom-html-style img[alt="@small"] {
+  width: 50%;
+}
+
 .custom-html-style table {
   margin: auto;
 }
